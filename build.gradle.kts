@@ -49,6 +49,7 @@ dependencies {
     // persistencia
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("org.postgresql:postgresql")
 
     // security
     implementation("org.springframework.boot:spring-boot-starter-security")

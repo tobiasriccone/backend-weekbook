@@ -27,6 +27,40 @@ spring:
   session:
     store-type: jdbc
     jdbc.initialize-schema: always
+
+email:
+  enabled: false  # Deshabilita el servicio de correo por defecto
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://dpg-cpq95s4s1f4s73ch1g7g-a.oregon-postgres.render.com:5432/weekbook_bd
+    username: admin
+    password: xAkFzg2Wa7e3frNxmgRHUFjFFaWs2Bhr
+  jpa:
+    open-in-view: false
+    show-sql: false # true | false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: always
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
   h2:
     console:
       enabled: true
@@ -47,6 +81,3 @@ spring:
   sql:
     init:
       mode: always
-
-email:
-  enabled: false  # Deshabilita el servicio de correo por defecto
