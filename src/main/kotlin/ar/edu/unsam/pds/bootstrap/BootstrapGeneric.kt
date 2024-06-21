@@ -18,7 +18,7 @@ abstract class BootstrapGeneric(private val message: String) : InitializingBean 
         log.info(String.format("%-99s", "# Loading $message ...") + "#")
         log.info("####################################################################################################")
 
-        transactionTemplate().execute { this.doAfterPropertiesSet(); "status" }
+        //transactionTemplate().execute { this.doAfterPropertiesSet(); "status" }
     }
 
     abstract fun doAfterPropertiesSet()
